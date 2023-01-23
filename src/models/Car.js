@@ -25,6 +25,18 @@ const Car = db.define(
       type: Sequelize.DataTypes.STRING(200),
       allowNull: false,
     },
+    name_user: {
+      type: Sequelize.DataTypes.STRING(100),
+      allowNull: false,
+    },
+    email_user: {
+      type: Sequelize.DataTypes.STRING(100),
+      allowNull: false,
+    },
+    phone_user: {
+      type: Sequelize.DataTypes.STRING(100),
+      allowNull: false,
+    },
     created_at:{
         type: Sequelize.DataTypes.DATE,
         allowNull: false,
