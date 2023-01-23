@@ -10,13 +10,24 @@ const carController = {
     }
   },
   store: async (req, res) => {
-    const { name, marca, year_manufacture, description } = req.body;
+    const {
+      name,
+      marca,
+      year_manufacture,
+      description,
+      name_user,
+      email_user,
+      phone_user,
+    } = req.body;
     try {
       await Car.create({
         name,
         marca,
         year_manufacture,
         description,
+        name_user,
+        email_user,
+        phone_user,
       });
       res.status(200).json({ message: "Carro criado com sucesso." });
     } catch (error) {
@@ -38,7 +49,15 @@ const carController = {
     }
   },
   update: async (req, res) => {
-    const { name, marca, year_manufacture, description } = req.body;
+    const {
+      name,
+      marca,
+      year_manufacture,
+      description,
+      name_user,
+      email_user,
+      phone_user,
+    } = req.body;
     const { id } = req.params;
     try {
       await Car.update(
@@ -47,6 +66,9 @@ const carController = {
           marca,
           year_manufacture,
           description,
+          name_user,
+          email_user,
+          phone_user,
           updated_at: new Date(),
         },
         {
